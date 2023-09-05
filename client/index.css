@@ -1,0 +1,92 @@
+@font-face {
+  font-family: Vanguard;
+  src: url('/src/assets/Fontspring-DEMO-vanguardcf-demibold.otf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NothingYou;
+  src: url('/src/assets/NothingYouCouldDo-Regular.ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+#root{
+width: 100%;
+height: 100%;
+
+ /* max-height: 100vh;  */
+}
+
+:root {
+
+  font-family: Vanguard;
+  line-height: 0.8;
+  font-weight: 400;
+  /* color-scheme: light dark; */
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #232323;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(173, 173, 173);
+  text-decoration: inherit;
+}
+a:hover {
+  color: #ffffff;
+}
+
+body {
+
+  margin: 0;
+  display: flex;
+  /* position: absolute; */
+  /* place-items: center; */
+  /* min-width: 100%;*/
+  min-height: 100%; 
+  overflow-x: hidden;
+  width: 100vw; /* Set the container width to viewport width */
+  /* overflow: hidden;  */
+  
+}
+
+
+
+h1 {
+font-size: 7rem;
+margin: 0;
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #f0f0f0;
+    background-color: #c4c3c3;
+  }
+  a:hover {
+    color: #ffffff;
+  }
+  /* button {
+    background-color: #4b4b4b;
+    border: white solid 1px;
+  } */
+}
+
+
+
+

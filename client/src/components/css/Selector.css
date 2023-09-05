@@ -1,0 +1,210 @@
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+
+  .main-select {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10vh;
+  }
+  .visu-sum {
+    display: flex;
+    flex-direction: row;
+  }
+  .selector-section {
+    display: flex;
+    border: black solid 2px;
+    /* flex-direction: column; */
+    width: 80vw;
+    height: 5vh;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+  }
+  .selector-section select {
+    margin: 5px 10px;
+    height: 2rem;
+  }
+
+  .list-sum {
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 30vw;
+  }
+
+  .item-price {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttonselect {
+    z-index: 550;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    /* margin-left: 50vw; */
+    top: 18%;
+    right: 0;
+    /* margin: auto; */
+    height: 10%;
+    width: 40%;
+    /* border: red solid 2px */
+  }
+
+  .es-icon {
+    width: inherit;
+    height: auto;
+    background-image: url('../../assets/img/css-imgs/es-icon.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 35%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .es-icon-selected {
+    width: inherit;
+    height: auto;
+    background-image: url('../../assets/img/css-imgs/es-icon.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 35%;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 10px rgb(0, 0, 0)) invert(100%);
+  }
+
+  .tele-icon {
+    width: inherit;
+    /* height: auto; */
+    background-image: url('../../assets/img/css-imgs/teleIconC.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 30%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .tele-icon-selected {
+    width: inherit;
+    /* height: auto; */
+    background-image: url('../../assets/img/css-imgs/teleIconC.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 30%;
+    border: none;
+    filter: drop-shadow(0px 2px 10px rgb(0, 0, 0)) invert(100%);
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1223px) {
+  .main-select {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10vh;
+  }
+  .visu-sum {
+    /* border: red solid 2px; */
+    /* display: flex; */
+    /* flex-direction: row; */
+  }
+  .selector-section {
+    display: flex;
+    border: black solid 2px;
+    /* flex-direction: column; */
+    width: 80vw;
+    height: 5vh;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+  }
+  .selector-section select {
+    margin: 5px 10px;
+    height: 2rem;
+  }
+
+  .list-sum {
+    background-color: black;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 30vw;
+  }
+
+  .item-price {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .buttonselect {
+    z-index: 550;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    /* margin-left: 50vw; */
+    top: 10%;
+    right: 10%;
+    /* margin: auto; */
+    height: 10%;
+    width: 80%;
+    /* border: red solid 2px */
+  }
+
+  .es-icon {
+    width: inherit;
+    height: auto;
+    background-image: url('../assets/img/css-imgs/es-icon.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 35%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .es-icon-selected {
+    width: inherit;
+    height: auto;
+    background-image: url('../assets/img/css-imgs/es-icon.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 35%;
+    border: none;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 10px rgb(0, 0, 0)) invert(100%);
+  }
+
+  .tele-icon {
+    width: inherit;
+    /* height: auto; */
+    background-image: url('../assets/img/css-imgs/teleIconC.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 30%;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .tele-icon-selected {
+    width: inherit;
+    /* height: auto; */
+    background-image: url('../assets/img/css-imgs/teleIconC.svg');
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 50% 30%;
+    border: none;
+    filter: drop-shadow(0px 2px 10px rgb(0, 0, 0)) invert(100%);
+  }
+}

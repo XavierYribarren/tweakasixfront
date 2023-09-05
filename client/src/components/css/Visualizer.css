@@ -1,0 +1,301 @@
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+  /* Styles */
+
+
+
+.visualizer {
+
+  height: 140vh;
+ width: 99vw;
+  z-index: 10000 !important;
+  margin-bottom: 10vh;
+  /* box-shadow: 0 0 20px 10px #0000008e; */
+}
+.mainviz{
+  /* height: 140vh; */
+}
+#light .canvas {
+height: 150vh;
+
+  background: rgb(221, 221, 221);
+  z-index: 50 !important;
+  transition: 0.3s;
+}
+#dark .canvas {
+  height: 150vh;
+  
+    background: rgb(16, 16, 16);
+    z-index: 50 !important;
+    transition: 0.3s;
+  }
+  
+
+#save-guitar {
+  position: absolute;
+  margin-left: 70vw;
+  z-index: 500;
+}
+.floppydisk-wrap{
+  position: relative ;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+right: -20vw;
+top: -24vh;
+/* height: 75px;
+width: 75px; */
+cursor: pointer;
+z-index: 600;
+  background-color: #292929;
+border-radius: 50%;
+border: rgb(255, 255, 255) solid 6px;
+
+}
+
+.guitar-name{
+  display: flex;
+  position: absolute;
+  
+}
+
+.guitar-name > *{
+  z-index: 0;
+}
+
+.guitar-name > button{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+
+  /* padding: 10px 20px; */
+  background-color: transparent;
+  border-color: transparent;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  border-radius: 10px;
+  box-shadow: 0 5px 5px 2px #3c3c3c;
+
+   position: relative;
+  top:-30vh;
+  left: -3vw;
+  z-index: -100;
+  background-color: rgba(220, 220, 220, 0.538) ;
+}
+.guitar-name > button > p{
+
+  font-size: 1.4em;
+  font-weight: bolder;
+  color: #1f1e1e;
+  filter:drop-shadow(1px 3px 2px #3c3c3c)
+}
+
+.guitar-name > input{
+  width: 300px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-size: 1.8em;
+   position: relative;
+  top:-30vh;
+  /* left: -14vw; */
+display: flex;
+justify-content: space-around;
+  z-index: -100;
+}
+ 
+.guitar-name > input:focus{
+  outline: none;
+}
+ 
+.guitar-name > input::-webkit-input-placeholder {
+    padding-left: 5px;
+ font-size: 1em;
+    color: #3c3c3c;
+    font-style: italic
+}
+ 
+.guitar-name > input:-moz-placeholder { /* Firefox 18- */
+    padding-left: 5px;
+    font-size: 1em;
+    color: #3c3c3c;
+      font-style: italic
+}
+ 
+.guitar-name > input::-moz-placeholder {  /* Firefox 19+ */
+    padding-left: 5px;
+    font-size: 1em;
+    color: #3c3c3c;
+      font-style: italic
+}
+ 
+.guitar-name > input:-ms-input-placeholder {
+    padding-left: 5px;
+    font-size: 1em;
+    color: #3c3c3c;
+      font-style: italic
+}
+
+
+
+  }
+
+
+
+
+  
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 200px) and (max-device-width : 1223px) {
+  /* Styles */
+  #light > div.main-select > div.visu-sum > div > div.visualizer > div > div > div > canvas{
+    height: auto !important;
+    width: auto !important;
+    max-width: 100%;
+    max-height: 80em;
+    /* scale: 0.5 */
+  }
+  .visualizer {
+
+    height: 100%;
+   width: 100%;
+   max-width: 100vw;
+    z-index: 10000 !important;
+    margin-bottom: 10%;
+    /* box-shadow: 0 0 20px 10px #0000008e; */
+  }
+
+  .canvas {
+  /* max-width: 100%; */
+  height: 140vh;
+  /* scale: 0.8; */
+  /* height: 95%; */
+    /* max-width: 100em; */
+    /* background-color: rgb(230, 230, 230); */
+    background: rgb(196, 196, 196);
+    z-index: 50 !important;
+  }
+  
+  #save-guitar {
+    position: absolute;
+    /* display: flex; */
+    /* margin-left: 70em; */
+    z-index: 500;
+    max-width: 70vw;
+  }
+  .floppydisk-wrap{
+    position: relative ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  right: -20vw;
+  top: -24vh;
+  /* height: 75px;
+  width: 75px; */
+  cursor: pointer;
+  z-index: 600;
+    background-color: #292929;
+  border-radius: 50%;
+  border: rgb(255, 255, 255) solid 6px;
+  
+  }
+  
+  .guitar-name{
+    display: flex;
+    position: absolute;
+    
+  }
+  
+  .guitar-name > *{
+    z-index: 0;
+  }
+  
+  .guitar-name > button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  
+    /* padding: 10px 20px; */
+    background-color: transparent;
+    border-color: transparent;
+    /* border-bottom: 1px solid rgb(0, 0, 0); */
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 2px #3c3c3c;
+  
+     position: relative;
+    top:-30vh;
+    left: -14vw;
+    z-index: -100;
+    background-color: rgba(220, 220, 220, 0.538) ;
+  }
+  .guitar-name > button > p{
+  
+    font-size: 1.4em;
+    font-weight: bolder;
+    color: #1f1e1e;
+    filter:drop-shadow(1px 3px 2px #3c3c3c)
+  }
+  
+  .guitar-name > input{
+    width: 300px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    font-size: 1.8em;
+     position: relative;
+    top:-30vh;
+    /* left: -14vw; */
+  display: flex;
+  justify-content: space-around;
+    z-index: -100;
+  }
+   
+  .guitar-name > input:focus{
+    outline: none;
+  }
+   
+  .guitar-name > input::-webkit-input-placeholder {
+      padding-left: 5px;
+   font-size: 1em;
+      color: #3c3c3c;
+      font-style: italic
+  }
+   
+  .guitar-name > input:-moz-placeholder { /* Firefox 18- */
+      padding-left: 5px;
+      font-size: 1em;
+      color: #3c3c3c;
+        font-style: italic
+  }
+   
+  .guitar-name > input::-moz-placeholder {  /* Firefox 19+ */
+      padding-left: 5px;
+      font-size: 1em;
+      color: #3c3c3c;
+        font-style: italic
+  }
+   
+  .guitar-name > input:-ms-input-placeholder {
+      padding-left: 5px;
+      font-size: 1em;
+      color: #3c3c3c;
+        font-style: italic
+  }
+  
+
+  .confirm-save{
+
+    /* display: flex; */
+  }
+  
+  #pr_id_6 > div.p-dialog-footer button{
+ width: 100%;
+  }
+  }
+
+

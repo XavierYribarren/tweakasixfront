@@ -1,0 +1,140 @@
+.dropzone-container{
+  display: flex;
+justify-content: space-around;
+position: relative;
+
+}
+
+.dropzone-visible .dropzone-div{
+    /* position: absolute; */
+
+    position: relative;
+    height : 5vh;
+    z-index: 500;  
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 1vh; */
+       z-index: 2500;
+    height: 100%;
+    min-height: 25vh;
+    min-width: 12vw;
+    width: 100%;
+  flex-direction: column;
+   
+  }
+  
+  .dropzone-div > input{
+  /* position: relative; */
+    height : auto;
+    width: 100%;
+
+  }
+  .dropzone-div >  .dragtext-visible{
+    display: flex;
+    padding-top: 1vh;
+    text-align: center;
+    font-family: Oswald;
+   background-color: rgba(78, 78, 78, 0.427);
+   border-radius: 12px;
+   width: 15vw;
+   height: 20vh;
+   /* padding: 2em 0em; */
+    color: black;
+    justify-content: space-between;
+
+    /* align-items: center; */
+  }
+  .dropzone-div >  .dragtext-hidden{
+ display: none;
+  }
+
+  .dropspace {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin: 0 auto;
+
+    justify-content: space-evenly;
+  align-items: center;
+  }
+  
+  .bp-download{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+    margin: auto;
+    padding: 0.7em;
+    border-radius: 15px ;
+    border-style: none;
+  }
+
+
+.preview-tex{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+
+  /* max-width: 80%; */
+    background-color: rgba(78, 78, 78, 0.427);
+
+    border-radius: 8px;
+    margin: 0 2px;
+}
+.preview-tex > * {
+
+z-index: 2500;
+
+
+}
+
+.preview-tex > div {
+  display: flex;
+  flex-wrap: wrap;
+width: 10vw;
+justify-content: space-around;
+margin: 6px;
+}
+
+.preview-tex-hidden > *{
+  visibility: hidden;
+}
+
+  
+.exaside{
+
+  display: grid; 
+
+  grid-auto-rows: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  
+  gap: 3px;
+
+  margin: 0;
+padding: 0;
+position: relative; 
+width: auto; 
+ height: auto;
+padding: 0.5em;
+border-radius: 12px;
+border: 4px white solid;
+background-color: rgba(5, 5, 5, 0.928);
+}
+
+
+.exaside-hidden{
+  display: none;
+}
+
+.multi-sel{
+width: 80%;
+}
+
+.trash-button{
+ position: static;
+  right: -70%;
+  bottom: -70%;
+  border-radius: 6px;
+
+}
+

@@ -1,0 +1,473 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+.p-component {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.p-component-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-duration: 0.2s;
+}
+
+.p-disabled,
+.p-component:disabled {
+  opacity: 0.6;
+}
+
+.p-error {
+  color: #e24c4c;
+}
+
+.p-text-secondary {
+  color: #6c757d;
+}
+
+.pi {
+  font-size: 1rem;
+}
+
+.p-link {
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  border-radius: 6px;
+}
+.p-link:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #bfdbfe;
+}
+
+.p-component-overlay-enter {
+  animation: p-component-overlay-enter-animation 1500ms forwards;
+}
+
+.p-component-overlay-leave {
+  animation: p-component-overlay-leave-animation 150ms forwards;
+}
+
+@keyframes p-component-overlay-enter-animation {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--maskbg);
+  }
+}
+@keyframes p-component-overlay-leave-animation {
+  from {
+    background-color: var(--maskbg);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+.p-colorpicker {
+  display: inline-block;
+}
+
+.p-colorpicker-dragging {
+  cursor: pointer;
+}
+
+.p-colorpicker-overlay {
+  position: relative;
+}
+
+.p-colorpicker-panel {
+  position: relative;
+  width: 193px;
+  height: 166px;
+}
+
+.p-colorpicker-overlay-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.p-colorpicker-preview {
+  cursor: pointer;
+}
+
+.p-colorpicker-panel .p-colorpicker-content {
+  position: relative;
+}
+
+.p-colorpicker-panel .p-colorpicker-color-selector {
+  width: 150px;
+  height: 150px;
+  top: 8px;
+  left: 8px;
+  position: absolute;
+}
+
+.p-colorpicker-panel .p-colorpicker-color {
+  width: 150px;
+  height: 150px;
+}
+
+.p-colorpicker-panel .p-colorpicker-color-handle {
+  position: absolute;
+  top: 0;
+  left: 150px;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  border-width: 1px;
+  border-style: solid;
+  margin: -5px 0 0 -5px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.p-colorpicker-panel .p-colorpicker-hue {
+  width: 17px;
+  height: 150px;
+  top: 8px;
+  left: 167px;
+  position: absolute;
+  opacity: 0.85;
+}
+
+.p-colorpicker-panel .p-colorpicker-hue-handle {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 21px;
+  margin-left: -2px;
+  margin-top: -5px;
+  height: 10px;
+  border-width: 2px;
+  border-style: solid;
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.p-colorpicker-panel .p-colorpicker-color {
+  background: transparent
+    url("../../assets/img/css-imgs/color.png")
+    no-repeat left top;
+}
+
+.p-colorpicker-panel .p-colorpicker-hue {
+  background: transparent
+    url("../../assets/img/css-imgs/hue.png")
+    no-repeat left top;
+}
+
+.p-colorpicker-preview {
+  width: 2rem;
+  height: 2rem;
+}
+
+.p-colorpicker-panel {
+  background: #323232;
+  border: 1px solid #191919;
+}
+.p-colorpicker-panel .p-colorpicker-color-handle,
+.p-colorpicker-panel .p-colorpicker-hue-handle {
+  border-color: #ffffff;
+}
+
+.p-colorpicker-overlay-panel {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.p-inputtext {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  color: #495057;
+  background: #ffffff;
+  padding: 0.75rem 0.75rem;
+  border: 1px solid #434343;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  appearance: none;
+  border-radius: 6px;
+}
+.p-inputtext:enabled:hover {
+  border-color: #ececec;
+  border-width: 0.2rem;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #bfdbfe;
+  border-color: #afafaf;
+
+}
+.p-inputtext.p-invalid.p-component {
+  border-color: #e24c4c;
+}
+.p-inputtext.p-inputtext-sm {
+  font-size: 0.875rem;
+  padding: 0.65625rem 0.65625rem;
+}
+.p-inputtext.p-inputtext-lg {
+  font-size: 1.25rem;
+  padding: 0.9375rem 0.9375rem;
+}
+
+.p-slider {
+  position: relative;
+}
+.p-slider .p-slider-handle {
+  position: absolute;
+  cursor: grab;
+  touch-action: none;
+  display: block;
+  z-index: 1;
+}
+.p-slider .p-slider-handle.p-slider-handle-active {
+  z-index: 2;
+}
+.p-slider-range {
+  position: absolute;
+  display: block;
+}
+.p-slider-horizontal .p-slider-range {
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.p-slider-horizontal .p-slider-handle {
+  top: 50%;
+}
+.p-slider-vertical {
+  height: 100px;
+}
+.p-slider-vertical .p-slider-handle {
+  left: 50%;
+}
+.p-slider-vertical .p-slider-range {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.p-slider {
+  background: #dee2e6;
+  border: 0 none;
+  border-radius: 6px;
+}
+.p-slider.p-slider-horizontal {
+  height: 0.286rem;
+}
+.p-slider.p-slider-horizontal .p-slider-handle {
+  margin-top: -0.5715rem;
+  margin-left: -0.5715rem;
+}
+.p-slider.p-slider-vertical {
+  width: 0.286rem;
+}
+.p-slider.p-slider-vertical .p-slider-handle {
+  margin-left: -0.5715rem;
+  margin-bottom: -0.5715rem;
+}
+.p-slider .p-slider-handle {
+  height: 1.143rem;
+  width: 1.143rem;
+  background: #ffffff;
+  border: 2px solid #b0b0b1;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+}
+.p-slider .p-slider-handle:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: 0 0 0 0.2rem #bfdbfe;
+}
+.p-slider .p-slider-range {
+  background: #3b3b3b;
+}
+.p-slider:not(.p-disabled) .p-slider-handle:hover {
+  background: #bababa;
+  border-color: #e1e1e1;
+}
+
+.p-tooltip {
+  position: absolute;
+  padding: 0.25em 0.5rem;
+  top: -9999px;
+  left: -9999px;
+}
+
+.p-tooltip.p-tooltip-right,
+.p-tooltip.p-tooltip-left {
+  padding: 0 0.25rem;
+}
+
+.p-tooltip.p-tooltip-top,
+.p-tooltip.p-tooltip-bottom {
+  padding: 0.25em 0;
+}
+
+.p-tooltip .p-tooltip-text {
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.p-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.p-tooltip-right .p-tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -0.25rem;
+  border-width: 0.25em 0.25em 0.25em 0;
+}
+
+.p-tooltip-left .p-tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -0.25rem;
+  border-width: 0.25em 0 0.25em 0.25rem;
+}
+
+.p-tooltip.p-tooltip-top {
+  padding: 0.25em 0;
+}
+
+.p-tooltip-top .p-tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.25rem;
+  border-width: 0.25em 0.25em 0;
+}
+
+.p-tooltip-bottom .p-tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -0.25rem;
+  border-width: 0 0.25em 0.25rem;
+}
+
+.p-tooltip .p-tooltip-text {
+  background: #495057;
+  color: #ffffff;
+  padding: 0.75rem 0.75rem;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+.p-tooltip.p-tooltip-right .p-tooltip-arrow {
+  border-right-color: #495057;
+}
+.p-tooltip.p-tooltip-left .p-tooltip-arrow {
+  border-left-color: #495057;
+}
+.p-tooltip.p-tooltip-top .p-tooltip-arrow {
+  border-top-color: #495057;
+}
+.p-tooltip.p-tooltip-bottom .p-tooltip-arrow {
+  border-bottom-color: #495057;
+}
+
+
+
+
+
+
+/* transitions */
+
+
+.p-panel .p-panel-header .p-panel-header-icon {
+    width: 2rem;
+    height: 2rem;
+    color: #6c757d;
+    border: 0 none;
+    background: transparent;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+
+
+
+  .p-overlaypanel .p-overlaypanel-close {
+    background: #cccccc;
+    color: #ffffff;
+    width: 2rem;
+    height: 2rem;
+    transition: background-color 0.5s, color 0.2s, box-shadow 0.2s;
+    border-radius: 50%;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+  }
+  .p-overlaypanel .p-overlaypanel-close:enabled:hover {
+    background: #d7d7d7;
+    color: #ffffff;
+  }
+
+
+  .p-overlaypanel-enter-active {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: transform .12s cubic-bezier(0, 0, 0.2, 1), opacity .12s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.p-overlaypanel-enter-done {
+    transform: none;
+}
+
+.p-overlaypanel-exit {
+    opacity: 1;
+}
+
+.p-overlaypanel-exit-active {
+    opacity: 0;
+    transition: opacity .1s linear;
+}
+
+
+.p-connected-overlay {
+    opacity: 0;
+    transform: scaleY(0.8);
+    transition: transform .12s cubic-bezier(0, 0, 0.2, 1), opacity .12s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.p-colorpicker-preview.main-metal-button .metalIcons{
+max-width: 30px;
+max-height: 30px;
+}
+
+#metalIcons-parent .p-button.p-component{
+ /* display: flex; */
+  background: black;
+  max-height: 2.2rem;
+border: none;
+}
+
+
+#metalIcons-parent{
+background-color: black;
+}
+
+
+.metalIcons {
+width: 32px;
+height: 32px;
+border-radius: 4px;
+
+}
+
+
+
+
+
