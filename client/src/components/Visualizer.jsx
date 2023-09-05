@@ -448,7 +448,7 @@ function Visualizer({  model, gtrPrice }) {
         />
         <div className="card flex justify-content-center">
           {/* <Button onClick={() => setVisible(true)} icon="pi pi-check" /> */}
-          {loggedIn ? (
+          {/* {loggedIn ? (
             <div
               className="floppydisk-wrap"
               onClick={(e) => (e.stopPropagation(), setVisible(true))}
@@ -464,7 +464,7 @@ function Visualizer({  model, gtrPrice }) {
                 <FloppyDisk size={56} className="floppydisk" />
               </a>
             </div>
-          )}
+          )} */}
         </div>
         {!mobSize && (
           <div className="guitar-name">
