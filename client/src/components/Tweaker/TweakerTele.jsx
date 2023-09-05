@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useState, useEffect, useLayoutEffect, useContext } from "react";
 import "./TweakerMain.css";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,6 +17,7 @@ import dragIcon from "../../assets/drag.svg";
 import resetIcon from "../../assets/reset.svg";
 import MyDropzone from "../Dropzone";
 import { ArrowBendDoubleUpLeft, StackSimple } from "@phosphor-icons/react";
+import { ShopContext } from "../../context/shop-context";
 
 function TweakerTele({
   colorList,
@@ -60,14 +61,16 @@ const getVariation = () => {
   setSingleVar(singleRes)
 })}
 
+  const { addToCart, removeFromCart, getCartAmount, addGuitarToCart } =
+    useContext(ShopContext);
+
 
 const [metalPrice, setMetalPrice] = useState()
 const [singlePrice, setSinglePrice] = useState()
 const [gtrPriceFullVar, setGtrPriceFullVar] = useState(gtrPriceFull)
   useEffect(() => {
 
-
-
+  
 }, [gtrPriceFull]);
 
 useEffect(() => {
@@ -126,7 +129,39 @@ getVariation()
    
 
 
-  
+   const addGtrToCart = () => {
+    const guitarToAdd = {
+      id: model,
+      name: gtrName != "" ? gtrName : "guitar" + dateString,
+      side: colorList.side,
+      binding: colorList.binding,
+      tablefront: colorList.tablefront,
+      tableback: colorList.tableback,
+      neckwood: colorList.neck,
+      fretboard: colorList.fretboard,
+      fretbinding: colorList.fretbinding,
+      frets: colorList.frets,
+      inlay: colorList.inlay,
+      nut: colorList.nut,
+      metal_pieces: colorList.metal_pieces,
+      pickup_cover: colorList.pickup_cover,
+      pickup_ring: colorList.pickup_ring,
+      knobs: colorList.knobs,
+      texture_path: colorList.texture_path,
+      gloss: colorList.gloss,
+      scratch: colorList.scratch,
+      body: colorList.body,
+      wood: colorList.wood,
+      pickguard: colorList.pickguard,
+      single_plastic: colorList.single_plastic,
+      single_metal: colorList.single_metal,
+      backplate: colorList.backplate,
+      price: gtrPriceFullVar,
+    };
+    //   const gtrAndPrice = {guitarToAdd, gtrPriceFullVar}
+    //  addGuitarToCart(gtrAndPrice)
+    addToCart(guitarToAdd);
+  };
 
 
   return (
@@ -295,7 +330,7 @@ getVariation()
             <div className="pickers-sliders">
               <Sliders setColorList={setColorList} colorList={colorList} />
             </div>
-            <div
+            {/* <div
               className="dropzone-line"
               onClick={() => setShowPreview(!showPreview)}
             >
@@ -326,7 +361,17 @@ getVariation()
             </Button>
           </div>{" "}
           <div  className="gtr-price-full">
-            Total:<div className="price-number">&nbsp;{gtrPriceFullVar}€</div>
+            Total:<div className="price-number">&nbsp;{gtrPriceFullVar}€</div> */}
+        <div onClick={addGtrToCart} className="gtr-price-full">
+                {/* <p>Total: </p>
+                <div className="price-number">&nbsp;{gtrPriceFullVar}</div>
+                <span id="€">€</span> */}
+                    <div className="price-number">&nbsp;</div>
+              </div>
+
+              <button onClick={addGtrToCart} className="addtocart">
+                Add to cart
+              </button>
           </div>
         </div>
       </Draggable>

@@ -75,55 +75,56 @@ function Parts() {
   };
 
   return (
-    <div className={activeItem != null ? "e-shop-active" : "e-shop"} onMouseMove={(e) => handleMouseMove(e)}>
-      <div
-        className={activeItem != null ? "overlay-active" : "overlay"}
-        onClick={() => setActiveItem(null)}
-      ></div>
-      <div className="parts-products">
-        {itemsList.map((item) => (
-          <div
-            key={item.id}
-            className={item.name === activeItem ? "product-active" : "product"}
-            style={{ }}
+    <Construction/>
+    // <div className={activeItem != null ? "e-shop-active" : "e-shop"} onMouseMove={(e) => handleMouseMove(e)}>
+    //   <div
+    //     className={activeItem != null ? "overlay-active" : "overlay"}
+    //     onClick={() => setActiveItem(null)}
+    //   ></div>
+    //   <div className="parts-products">
+    //     {itemsList.map((item) => (
+    //       <div
+    //         key={item.id}
+    //         className={item.name === activeItem ? "product-active" : "product"}
+    //         style={{ }}
             
-          >
-            <h3>
-              {item.name === "pickup_cover"
-                ? (item.name = "Humbucker")
-                : toPascalCase(item.name)}
-            </h3>
-            <div
-              className={item.name === activeItem ? "canvas-active" : "canvas"}
-              onClick={() => handleClick(item)}
-            >
-              <Product item={item.name} activeItem={activeItem} />
-            </div>
-            <p>{item.price}€</p>
-            <div className="cart-actions">
-              <button onClick={() => removeFromCart(item)}>Remove</button>
-              <p>
-                 
-                {cartItems.find((element) => element.item.id === item.id)
-                  ?.qty || 0}
-              </p>
-              <button onClick={() => addToCart(item)}>Add to cart</button>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="sub-cart">
-        <h3>{totalAmount}€</h3>
+    //       >
+    //         <h3>
+    //           {item.name === "pickup_cover"
+    //             ? (item.name = "Humbucker")
+    //             : toPascalCase(item.name)}
+    //         </h3>
+    //         <div
+    //           className={item.name === activeItem ? "canvas-active" : "canvas"}
+    //           onClick={() => handleClick(item)}
+    //         >
+    //           <Product item={item.name} activeItem={activeItem} />
+    //         </div>
+    //         <p>{item.price}€</p>
+    //         <div className="cart-actions">
+    //           <button onClick={() => removeFromCart(item)}>Remove</button>
+    //           <p>
+    //              
+    //             {cartItems.find((element) => element.item.id === item.id)
+    //               ?.qty || 0}
+    //           </p>
+    //           <button onClick={() => addToCart(item)}>Add to cart</button>
+    //         </div>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="sub-cart">
+    //     <h3>{totalAmount}€</h3>
 
-        <button
-          onClick={() => {
-            handleClearStorage();
-          }}
-        >
-          Clear cart <ArrowCounterClockwise size={26} />
-        </button>
-      </div>
-    </div>
+    //     <button
+    //       onClick={() => {
+    //         handleClearStorage();
+    //       }}
+    //     >
+    //       Clear cart <ArrowCounterClockwise size={26} />
+    //     </button>
+    //   </div>
+    // </div>
   );
 }
 

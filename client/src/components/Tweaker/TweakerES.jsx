@@ -418,7 +418,7 @@ function TweakerES({
               <div className="pickers-sliders">
                 <Sliders setColorList={setColorList} colorList={colorList} />
               </div>
-              <div
+              {/* <div
                 className="dropzone-line"
                 onClick={() => setShowPreview(!showPreview)}
               >
@@ -447,12 +447,14 @@ function TweakerES({
 
               <Button id="remove" onClick={() => dispatch(resetDrop(0))}>
                 <p>Remove image</p>
-              </Button>
+              </Button> */}
 
               <div onClick={addGtrToCart} className="gtr-price-full">
                 {/* <p>Total: </p>
                 <div className="price-number">&nbsp;{gtrPriceFullVar}</div>
                 <span id="€">€</span> */}
+                <div className="price-number">&nbsp;</div>
+             
               </div>
               <button onClick={addGtrToCart} className="addtocart">
                 Add to cart
