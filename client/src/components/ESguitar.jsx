@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect, useLayoutEffect } from "react";
-import "./css/Visualizer.css";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import React, { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import './css/Visualizer.css';
+import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import {
   OrbitControls,
   useGLTF,
@@ -10,24 +10,18 @@ import {
   Decal,
   useTexture,
   useSurfaceSampler,
-} from "@react-three/drei";
-import * as THREE from "three";
-import { useDispatch, useSelector } from "react-redux";
-import { sRGBEncoding } from "three";
+} from '@react-three/drei';
+import * as THREE from 'three';
+import { useDispatch, useSelector } from 'react-redux';
+import { sRGBEncoding } from 'three';
 
-function ESguitar({
- 
-  colorList,
-  tilt,
-  pos,
-
-}) {
+function ESguitar({ colorList, tilt, pos }) {
   const ref = useRef();
   const meshRefs = useRef([]);
-  const { nodes, materials } = useGLTF("/guitar/ES335UV.glb");
+  const { nodes, materials } = useGLTF('/guitar/ES335UV.glb');
 
-  const path = `${import.meta.env.VITE_BACKEND_URL}/stocked`;
-  const tempPath = `${import.meta.env.VITE_BACKEND_URL}/stocked/temporary/`;
+  const path = `/stocked`;
+  const tempPath = `/stocked/temporary/`;
 
   const triggs = useSelector((state) => state.guitar_set.dropped);
 
@@ -36,8 +30,8 @@ function ESguitar({
   );
 
   const [scratches, scratchesrough] = useTexture([
-    "guitar/imgs/DefaultMaterial_Roughness2.jpg",
-    "guitar/imgs/DefaultMaterial_Roughness2-INV.jpg",
+    'guitar/imgs/DefaultMaterial_Roughness2.jpg',
+    'guitar/imgs/DefaultMaterial_Roughness2-INV.jpg',
   ]);
   // const texture_path = useSelector(
   //   (state) => state.guitar_set.colorSet.texture_path
@@ -50,7 +44,7 @@ function ESguitar({
 
   //  const [txUse, setTxUse] = useState(path + colorList.texture_path);
 
-  const woodFull = useTexture("335Wood-min.png");
+  const woodFull = useTexture('335Wood-min.png');
   woodFull.flipY = false;
 
   const woodMat = new THREE.MeshLambertMaterial({
@@ -68,8 +62,8 @@ function ESguitar({
   scratchesrough.wrapT = THREE.RepeatWrapping;
   scratchesrough.repeat.set(10, 2);
 
-  materials.un_black = new THREE.MeshBasicMaterial({ color: "black" });
-  materials.strings = new THREE.MeshLambertMaterial({ color: "#595959" });
+  materials.un_black = new THREE.MeshBasicMaterial({ color: 'black' });
+  materials.strings = new THREE.MeshLambertMaterial({ color: '#595959' });
   materials.varnish = new THREE.MeshStandardMaterial({
     transparent: true,
     opacity: (0.32 * colorList.gloss) / 90,
@@ -101,11 +95,9 @@ function ESguitar({
   materials.side.roughness = 0.3;
   materials.neckwood.roughness = 0.3;
 
-
-
-  const maple = useTexture("maple.png");
+  const maple = useTexture('maple.png');
   maple.flipY = false;
-  const rosewood = useTexture("rosewood.png");
+  const rosewood = useTexture('rosewood.png');
   rosewood.flipY = false;
   rosewood.encoding = sRGBEncoding;
 
@@ -115,28 +107,28 @@ function ESguitar({
     Front: useTexture(
       texturesFromReducer.Front
         ? tempPath + texturesFromReducer.Front
-        : path + "/HD_transparent_picture.png"
+        : path + '/HD_transparent_picture.png'
     ),
 
     Back: useTexture(
       texturesFromReducer.Back
         ? tempPath + texturesFromReducer.Back
-        : path + "/HD_transparent_picture.png"
+        : path + '/HD_transparent_picture.png'
     ),
     Side: useTexture(
       texturesFromReducer.Side
         ? tempPath + texturesFromReducer.Side
-        : path + "/HD_transparent_picture.png"
+        : path + '/HD_transparent_picture.png'
     ),
     Neck: useTexture(
       texturesFromReducer.Neck
         ? tempPath + texturesFromReducer.Neck
-        : path + "/HD_transparent_picture.png"
+        : path + '/HD_transparent_picture.png'
     ),
     Pickguard: useTexture(
       texturesFromReducer.Pickguard
         ? tempPath + texturesFromReducer.Pickguard
-        : path + "/HD_transparent_picture.png"
+        : path + '/HD_transparent_picture.png'
     ),
   };
   partTextures.Front.flipY = false;
@@ -159,11 +151,7 @@ function ESguitar({
   return (
     <>
       <group rotation={tilt} ref={ref} position={pos}>
-        <group
-          dispose={null}
-          position={[0, -0.5, 0]}
-          scale={2}
-        >
+        <group dispose={null} position={[0, -0.5, 0]} scale={2}>
           <mesh
             ref={(mesh) => (meshRefs.current[0] = mesh)}
             castShadow
@@ -173,7 +161,7 @@ function ESguitar({
             material-side={THREE.FrontSide}
             material-color={colorList.side}
             material-map={
-              texturesFromReducer.Side !== null ? partTextures.Side : ""
+              texturesFromReducer.Side !== null ? partTextures.Side : ''
             }
           />
 
@@ -194,7 +182,7 @@ function ESguitar({
             material-side={THREE.FrontSide}
             material-color={colorList.tableback}
             material-map={
-              texturesFromReducer.Back !== null ? partTextures.Back : ""
+              texturesFromReducer.Back !== null ? partTextures.Back : ''
             }
           />
           <mesh
@@ -206,7 +194,7 @@ function ESguitar({
             material-color={colorList.tablefront}
             // material-map={triggs > 0 ? reactMap : ''}
             material-map={
-              texturesFromReducer.Front !== null ? partTextures.Front : ""
+              texturesFromReducer.Front !== null ? partTextures.Front : ''
             }
           >
             {/* <Decal mesh={ref} >
@@ -318,7 +306,7 @@ function ESguitar({
             material-side={THREE.FrontSide}
             material-color={colorList.neck}
             material-map={
-              texturesFromReducer.Neck !== null ? partTextures.Neck : ""
+              texturesFromReducer.Neck !== null ? partTextures.Neck : ''
             }
           />
           <mesh
@@ -410,5 +398,5 @@ function ESguitar({
     </>
   );
 }
-useGLTF.preload("/335wholeUV.glb");
+useGLTF.preload('/335wholeUV.glb');
 export default ESguitar;

@@ -36,13 +36,7 @@ function Account() {
 
   const dispatch = useDispatch();
 
-  const userAuthenticated = () => {
-    axios.get(`${import.meta.env.VITE_BACKEND_URL}/isUserAuth`, {
-      headers: {
-        "x-access-token": localStorage.getItem("token"),
-      },
-    });
-  };
+ 
 
   useEffect(() => {
     setUserInfo(userData);

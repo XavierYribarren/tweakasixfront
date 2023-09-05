@@ -25,8 +25,8 @@ setDropped,
   const meshRefs = useRef([]);
   const { nodes, materials } = useGLTF("/guitar/TeleOPT3PG.glb");
 
-  const path = `${import.meta.env.VITE_BACKEND_URL}/stocked`;
-  const tempPath = `${import.meta.env.VITE_BACKEND_URL}/stocked/temporary/`;
+  const path = `/stocked`;
+  const tempPath = `/stocked/temporary/`;
 
   const triggs = useSelector((state) => state.guitar_set.dropped);
   const texturesFromReducer = useSelector((state)=> state.texture_data.texture_assign)

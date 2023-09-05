@@ -78,14 +78,7 @@ function TweakerES({
   const [hBVar, setHBVar] = useState([]);
 
   const getVariation = () => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/itemsall/getvariation`, {})
-      .then((res) => {
-        const metalRes = res.data.filter((vari) => vari.part_id === 19);
-        setMetalVar(metalRes);
-        const HBRes = res.data.filter((vari) => vari.part_id === 12);
-        setHBVar(HBRes);
-      });
+
   };
 
   const [metalPrice, setMetalPrice] = useState();
@@ -457,9 +450,9 @@ function TweakerES({
               </Button>
 
               <div onClick={addGtrToCart} className="gtr-price-full">
-                <p>Total: </p>
+                {/* <p>Total: </p>
                 <div className="price-number">&nbsp;{gtrPriceFullVar}</div>
-                <span id="€">€</span>
+                <span id="€">€</span> */}
               </div>
               <button onClick={addGtrToCart} className="addtocart">
                 Add to cart
