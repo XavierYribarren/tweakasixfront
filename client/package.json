@@ -42,7 +42,6 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "three": "^0.151.0",
-    "use-react-screenshot": "^3.0.0",
     "uuid": "^9.0.0",
     "valtio": "^1.10.3"
   },
