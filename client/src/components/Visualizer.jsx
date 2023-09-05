@@ -29,7 +29,6 @@ import { FloppyDisk } from "@phosphor-icons/react";
 import { ThemeContext } from "../App";
 
 import { userGuitarsSave } from "../features/UserReducer";
-import { useScreenshot } from "use-react-screenshot";
 import Background from "./Background";
 
 function Visualizer({  model, gtrPrice }) {
@@ -62,31 +61,8 @@ function Visualizer({  model, gtrPrice }) {
   const [thumbImg, setThumbImg] = useState();
   const ref = createRef(null);
   const formData = new FormData();
-  const [image, takeScreenshot] = useScreenshot({
-    type: "image/png",
-    quality: 1.0,
-    width: 240,
-    height: 200,
-  });
 
-  const getImage = () => {
-    takeScreenshot(ref.current).then((capturedImage) => {
-      // The capturedImage contains the screenshot
-      const formData = new FormData();
-      formData.append("file", capturedImage);
-      formData.append("id", thbid);
 
-      axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/uploadthb`, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then((response) => {
-          setThumbImg(response);
-        });
-    });
-  };
 
   function getSize() {
     if (window.innerWidth < 1223) {
