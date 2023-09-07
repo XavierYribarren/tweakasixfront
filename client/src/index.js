@@ -1,9 +1,19 @@
+const express = require("express");
+const app = express();
+const port = 3001;
+const path = require("path");
+const cors = require("cors");
+const multer = require("multer");
+const fs = require("fs");
+
+
 app.use("/stocked", express.static(path.join(__dirname + "/stocked")));
 
 // setup multer for file upload
 
+console.log(express.static)
 ///////// Clean up the temp directory
-const temporaryFolder = "./stocked/temporary"; // Temporary folder path
+const temporaryFolder = "/stocked/temporary"; // Temporary folder path
 
 const clearTemporaryFolder = () => {
   const files = fs.readdirSync(temporaryFolder);
@@ -29,7 +39,7 @@ app.use((req, res, next) => {
 });
 const temporaryStorage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./stocked/temporary");
+    cb(null, "/stocked/temporary");
   },
   filename: function (req, file, cb) {
     cb(
@@ -45,7 +55,7 @@ const temporaryStorage = multer.diskStorage({
 
 const storageThb = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./stocked/thumbnails");
+    cb(null, "/stocked/thumbnails");
   },
   filename: function (req, file, cb) {
     cb(
@@ -76,7 +86,7 @@ app.post("/uploadthb", uploadthb.array("file"), (req, res) => {
   const imageBuffer = Buffer.from(base, "base64");
   const imageName = req.body.id.replace(/[:.]/g, '')
  
-  const imagePath = "./stocked/thumbnails/" + imageName + ".png"; // Provide the appropriate path and filename
+  const imagePath = "/stocked/thumbnails/" + imageName + ".png"; // Provide the appropriate path and filename
   fs.writeFileSync(imagePath, imageBuffer);
   const fileRes = imageBuffer;
   res.send(fileRes);
@@ -84,7 +94,7 @@ app.post("/uploadthb", uploadthb.array("file"), (req, res) => {
 
 const folder = "./";
 app.get("/stocked/", (req, res) => {
-  const directoryPath = "./stocked/";
+  const directoryPath = "/stocked/";
 
   fs.readdir(directoryPath, function (err, files) {
     if (err) {
@@ -106,4 +116,4 @@ app.get("/stocked/", (req, res) => {
     });
 
     res.status(200).send(fileInfos);
-  })
+  })})
